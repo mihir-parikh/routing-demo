@@ -6,7 +6,12 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 const routes: Routes = [
   {path: 'departments', component: DepartmentListComponent}, 
-  {path: 'employees', component: EmployeeListComponent}
+  {path: 'employees', component: EmployeeListComponent}, 
+  {
+    path: 'users',
+    // Instead of loading a component, lazy loading a module only when needed/visited 
+    loadChildren: './users/users.module#UsersModule'
+  }
 ];
 
 @NgModule({
